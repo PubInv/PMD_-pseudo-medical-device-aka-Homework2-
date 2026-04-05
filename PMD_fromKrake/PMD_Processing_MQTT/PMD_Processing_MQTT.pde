@@ -37,6 +37,7 @@ String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 // Date: 20260210 Rev 0.33.  Publish to an ADaM topic 
 // Date: 20260218 Rev 0.34.  Lower alarm level on many of the keyboard user input. Set for retained true for Lee, Nagham and Robert messages. 
 // Date: 20260308 Rev 0.35.  Rem out Publish/Subscribe to AdaM at "adam/out/LEBANON-5" 
+// Date: 20260405 Rev 0.36.  Set client.connect to clean session. 
 
 
 
@@ -71,8 +72,17 @@ void setupDictionary() {
   mac_to_NameDict.set("F4650BC295C0", "KRAKE_LB0006");
   mac_to_NameDict.set("F4650BC2959C", "KRAKE_LB0007");
   mac_to_NameDict.set("F4650BC295AC", "KRAKE_LB0008");
+  mac_to_NameDict.set("F4650BC295D0", "KRAKE_LB0009");
   
 
+  
+  mac_to_NameDict.set("F4650BC0B528", "KRAKE_US0014");
+  mac_to_NameDict.set("F4650BC295E8", "KRAKE_US0013");
+  
+  mac_to_NameDict.set("F4650BBB3EE4", "KRAKE_US0012");
+  mac_to_NameDict.set("F4650BC0B530", "KRAKE_US0011");
+  
+  mac_to_NameDict.set("F4650BC0B524", "KRAKE_US0010");
   mac_to_NameDict.set("F4650BBB3ED8", "KRAKE_US0009");
   
   mac_to_NameDict.set("F4650BC0B524", "KRAKE_US0007");
@@ -203,7 +213,7 @@ void setup() {
   client = new MQTTClient(this, adapter);
 
   //client.connect(BROKER_URL, USERNAME);    //  BROKER_URL and name
-  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC);    //  BROKER_URL and name
+  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC, true);    //  BROKER_URL, name, Clean session
   MessageFromProcessing_PMD = "Nothing published Yet"; //An intial message for the draw()
 }//end setup()
 
