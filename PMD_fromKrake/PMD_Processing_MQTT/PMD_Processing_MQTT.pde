@@ -4,7 +4,7 @@ String VERSION = "V0.37 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://broker.hivemq.com";
-//String BROKER_URL = "mqtt://broker.hivemq.com";
+//String BROKER_URL = "https://test.mosquitto.org/";
 
 // File: PMD_Processing_MQTT 
 // Author: Forrest Lee Erickson
@@ -141,14 +141,15 @@ class Adapter implements MQTTListener {
     println(theTimeStamp);  
     appendTextToFile(myLogFileName, "MQTT clientConnected");
     clientStatusChanged = true; //TO flag save of draw() window.
-
     mqttBrokerIsConnected = true;
+   
     print("Subscribing: ");
     for (int i = 0; i < KRAKE_MAC.length; i++) {
       print(i + ", ");
-      delay(20); //Added on 20260406 in hopes to avoid the Faild to Subscribe Time out error.
+      delay(9); //Added on 20260406 in hopes to avoid the Faild to Subscribe Time out error.
 //      client.subscribe("adam/out/LEBANON-5");// This is an ADaM server
-      client.subscribe(KRAKE_MAC[i]+"_ACK");
+      client.subscribe(KRAKE_MAC[i]+"_ACK", 2);  // QOS 2 for exactly once.
+      delay(9); //Added on 20260406 in hopes to avoid the Faild to Subscribe Time out error.
       client.setWill(KRAKE_MAC[i]+"_ALM", "a1 LWIT PMD" + theMAC +" has disconnected.");
     }//end for i
     println(" ");
@@ -218,9 +219,11 @@ void setup() {
 
   adapter = new Adapter();
   client = new MQTTClient(this, adapter);
-
+ 
   //client.connect(BROKER_URL, USERNAME);    //  BROKER_URL and name
-  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC, true);    //  BROKER_URL, name, Clean session
+//  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC, true);    //  BROKER_URL, name, Clean session
+  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC + "_" + second(), false);    //  BROKER_URL, name, do not Clean session
+//  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC, true);    //  BROKER_URL, name, Clean session
   MessageFromProcessing_PMD = "Nothing published Yet"; //An intial message for the draw()
 }//end setup()
 
