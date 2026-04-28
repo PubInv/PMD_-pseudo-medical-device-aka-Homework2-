@@ -85,40 +85,40 @@ void keyPressed() {
         MessageFromProcessing_PMD = "a0 Go to sleep, zzzzzzz";
       } else if (key == 'A' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Lee has left Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Lee has left Discord, " + theTimeStamp ;
       } else if (key == 'B' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Lee is in Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Lee is in Discord, " + theTimeStamp ;
       } else if (key == 'C' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Nagham has left Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Nagham has left Discord, " + theTimeStamp ;
       } else if (key == 'D' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Nagham is in Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Nagham is in Discord, " + theTimeStamp ;
       } else if (key == 'E' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Robert has left Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Robert has left Discord, " + theTimeStamp ;
       } else if (key == 'F' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Robert is in Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Robert is in Discord, " + theTimeStamp ;
       } else if (key == 'P' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Yehya has left Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Yehya has left Discord, " + theTimeStamp ;
       } else if (key == 'Q' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Yehya is in Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Yehya is in Discord, " + theTimeStamp ;
       } else if (key == 'V') {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Yuktee has left Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Yuktee has left Discord, " + theTimeStamp ;
       } else if (key == 'W') {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Yuktee is in Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Yuktee is in Discord, " + theTimeStamp ;
 
 
 
       } else if (key == 'Z' ) {
         myRetain = true;
-        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Lee has left Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "a5{ABCD}[123]GPAP 0.1.1 protocol message, Meet in Discord, " + theTimeStamp ;
       
     //End of messages in GPAP 0.1.1 protocol
       } else if (key == 'a' ) {
