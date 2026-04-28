@@ -81,8 +81,11 @@ void keyPressed() {
 
     for (int i = 0; i < KRAKE_MAC.length; i++) { //Need a for loop for all Krakes.
       int keyIndex = -1;
-      if (key == 'Z') {
+      if (key == 'z') {
         MessageFromProcessing_PMD = "a0 Go to sleep, zzzzzzz";
+      } else if (key == 'Z' ) {
+        myRetain = true;
+        MessageFromProcessing_PMD = "a1 {ABCD}[123]GPAP 0.1.1 protocl message, Lee has left Discord, " + theTimeStamp ;
       } else if (key == 'a' ) {
         myRetain = true;
         MessageFromProcessing_PMD = "a1 Lee has left Discord, " + theTimeStamp ;
