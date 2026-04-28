@@ -1,6 +1,6 @@
 
 String PROG_NAME = "PMD_Processing_MQTT";
-String VERSION = "V0.37 ";
+String VERSION = "V0.38 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://broker.hivemq.com";
@@ -41,6 +41,7 @@ String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 // Date: 20260308 Rev 0.35.  Rem out Publish/Subscribe to AdaM at "adam/out/LEBANON-5" 
 // Date: 20260405 Rev 0.36.  Set client.connect to clean session. 
 // Date: 20260406 Rev 0.37.  Add a delay to subscribe loop. 
+// Date: 20260428 Rev 0.38.  Extend the messages for the GPAP Protocol V0.1.1  
 
 
 
