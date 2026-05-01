@@ -42,6 +42,7 @@ String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 // Date: 20260405 Rev 0.36.  Set client.connect to clean session. 
 // Date: 20260406 Rev 0.37.  Add a delay to subscribe loop. 
 // Date: 20260428 Rev 0.38.  Extend the messages for the GPAP Protocol V0.1.1  
+// Date: 20260501 Rev 0.39.  Log all traffice from subscriptions.  
 
 
 
@@ -162,6 +163,8 @@ class Adapter implements MQTTListener {
     thePayload = str(year())+ String.format("%02d", month())+ String.format("%02d", day())+ "_"+ String.format("%02d", hour())+ String.format("%02d", minute())+ String.format("%02d", second()) ; //time stamp
     thePayload = thePayload + " " + "Msg_recd: " + mac_to_NameDict.get(topic) + " - " + new String(payload);
     println(thePayload);
+    
+    appendTextToFile(myLogFileName, thePayload);
     myBackground = color(0, 0, 0);
     mqttBrokerIsConnected = true;
   }
