@@ -202,7 +202,10 @@ void keyPressed() {
       }
 
       if (mqttBrokerIsConnected) {
-        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD);
+//        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, my_QOS, Retain);  QOS is {0,1,2} and Retain is bool
+//        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, 2, true);
+        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, 1, true);
+//        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD);
 //        client.publish("adam/out/LEBANON-5", MessageFromProcessing_PMD);  //The ADaB topic
       }
 
