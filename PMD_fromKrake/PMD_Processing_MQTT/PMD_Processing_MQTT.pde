@@ -1,6 +1,6 @@
 
 String PROG_NAME = "PMD_Processing_MQTT";
-String VERSION = "V0.38 ";
+String VERSION = "V0.40 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://broker.hivemq.com";
@@ -43,6 +43,7 @@ String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 // Date: 20260406 Rev 0.37.  Add a delay to subscribe loop. 
 // Date: 20260428 Rev 0.38.  Extend the messages for the GPAP Protocol V0.1.1  
 // Date: 20260501 Rev 0.39.  Log all traffice from subscriptions.  
+// Date: 20260502 Rev 0.40.  Change for 'Z' and 'z' clears the retained topic.  
 
 
 

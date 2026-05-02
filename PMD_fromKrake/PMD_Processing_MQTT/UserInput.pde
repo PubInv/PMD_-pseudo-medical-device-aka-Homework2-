@@ -81,7 +81,7 @@ void keyPressed() {
 
     for (int i = 0; i < KRAKE_MAC.length; i++) { //Need a for loop for all Krakes.
       int keyIndex = -1;
-      if (key == 'z') {
+      if (key == '!') {
         MessageFromProcessing_PMD = "a0 Go to sleep, zzzzzzz";
       } else if (key == 'A' ) {
         myRetain = true;
@@ -116,9 +116,11 @@ void keyPressed() {
 
 
 
-      } else if (key == 'Z' ) {
+      } else if (key == 'Z' || key == 'z' ) {
+        //myRetain = true;
+        //MessageFromProcessing_PMD = "a5{ABCD}[123]GPAP 0.1.1 protocol message, Meet in Discord, " + theTimeStamp ;
         myRetain = true;
-        MessageFromProcessing_PMD = "a5{ABCD}[123]GPAP 0.1.1 protocol message, Meet in Discord, " + theTimeStamp ;
+        MessageFromProcessing_PMD = "" ;  //Empty payload will turn off the retained messages.
       
     //End of messages in GPAP 0.1.1 protocol
       } else if (key == 'a' ) {
