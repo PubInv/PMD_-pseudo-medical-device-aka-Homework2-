@@ -44,6 +44,7 @@ String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 // Date: 20260428 Rev 0.38.  Extend the messages for the GPAP Protocol V0.1.1  
 // Date: 20260501 Rev 0.39.  Log all traffice from subscriptions.  
 // Date: 20260502 Rev 0.40.  Change for 'Z' and 'z' clears the retained topic.  
+// Date: 20260504 Rev 0.41.  Change so that 'Z' and 'z' set retain for all messages.  
 
 
 

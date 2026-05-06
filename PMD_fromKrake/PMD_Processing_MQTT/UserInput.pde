@@ -69,6 +69,7 @@ void checkButtons() {
  Publishes to all devices, aka topics, KRAKE_DTA_TOPIC[i]
  */
 void keyPressed() {
+  boolean globalRetain= false;
 
   if (mqttBrokerIsConnected) {         
     TimeZone tz = TimeZone.getDefault();
@@ -80,66 +81,70 @@ void keyPressed() {
 
 
     for (int i = 0; i < KRAKE_MAC.length; i++) { //Need a for loop for all Krakes.
-      int keyIndex = -1;
       if (key == '!') {
         MessageFromProcessing_PMD = "a0 Go to sleep, zzzzzzz";
       } else if (key == 'A' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Lee has left Discord, " + theTimeStamp ;
       } else if (key == 'B' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Lee is in Discord, " + theTimeStamp ;
       } else if (key == 'C' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Nagham has left Discord, " + theTimeStamp ;
       } else if (key == 'D' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Nagham is in Discord, " + theTimeStamp ;
       } else if (key == 'E' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Robert has left Discord, " + theTimeStamp ;
       } else if (key == 'F' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Robert is in Discord, " + theTimeStamp ;
       } else if (key == 'P' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Yehya has left Discord, " + theTimeStamp ;
       } else if (key == 'Q' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Yehya is in Discord, " + theTimeStamp ;
       } else if (key == 'V') {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Yuktee has left Discord, " + theTimeStamp ;
       } else if (key == 'W') {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Yuktee is in Discord, " + theTimeStamp ;
 
 
 
-      } else if (key == 'Z' || key == 'z' ) {
-        //myRetain = true;
+      } else if (key == 'Z' ) {
+        //myRetain = globalRetain;
         //MessageFromProcessing_PMD = "a5{ABCD}[123]GPAP 0.1.1 protocol message, Meet in Discord, " + theTimeStamp ;
-        myRetain = true;
+        globalRetain = true;
+//        MessageFromProcessing_PMD = "" ;  //Empty payload will turn off the retained messages.
+      } else if ( key == 'z' ) {
+        //myRetain = globalRetain;
+        //MessageFromProcessing_PMD = "a5{ABCD}[123]GPAP 0.1.1 protocol message, Meet in Discord, " + theTimeStamp ;
+        globalRetain = false;
         MessageFromProcessing_PMD = "" ;  //Empty payload will turn off the retained messages.
       
     //End of messages in GPAP 0.1.1 protocol
       } else if (key == 'a' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1 Lee has left Discord, " + theTimeStamp ;
       } else if (key == 'b' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2 Lee is back in Discord" + theTimeStamp;
       } else if (key == 'c' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1 Nagham has left Discord, " + theTimeStamp ;
       } else if (key == 'd' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2 Nagam is back in Discord" + theTimeStamp;
       } else if (key == 'e' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1 Robert has left Discord, " + theTimeStamp ;
       } else if (key == 'f' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2 Robert is back in Discord" + theTimeStamp;
       } else if (key == 'g' ) {
         MessageFromProcessing_PMD = "a5 time to GET Update Firmware." + theTimeStamp;
@@ -147,6 +152,7 @@ void keyPressed() {
         MessageFromProcessing_PMD = "h";
       } else if (key == 'i' ) {
         MessageFromProcessing_PMD = "i";
+        myRetain = false;
       } else if (key == 'J' ) {  //Publish a GPAP message.
         //MessageFromProcessing_PMD = "a2{12AB}[123]Current Version: 0.1.1";
         MessageFromProcessing_PMD = "a2{12AB}[123]The quick brown fox jumped over the lazy dog.";
@@ -159,13 +165,13 @@ void keyPressed() {
       } else if (key == 'n' ) {    //For Nagham
         MessageFromProcessing_PMD = "a5Nagham is in Discord, " + theTimeStamp ;
       } else if (key == 'p' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1 Yehya has left Discord, " + theTimeStamp ;
       } else if (key == 'q' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2 Yehya has entered Discord, " + theTimeStamp ;
       } else if (key == 'r' ) {
-        MessageFromProcessing_PMD = "a1Lee's closing browser to restart it."  + theTimeStamp;
+        MessageFromProcessing_PMD = "ra1Lee's closing browser to restart it."  + theTimeStamp;
       } else if (key == 's' ) {
         MessageFromProcessing_PMD = "s"; //Mute or Silence the alarm sound
       } else if (key == 't' ) {
@@ -173,10 +179,10 @@ void keyPressed() {
       } else if (key == 'u' ) {
         MessageFromProcessing_PMD = "u"; //unMute or enable the alarm sound
       } else if (key == 'v' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1 Yuktee has left Discord, " + theTimeStamp ;
       } else if (key == 'w' ) {
-        myRetain = true;
+        myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2 Yuktee has entered Discord, " + theTimeStamp ;
       } else if (key == 'X' ) { //Exit the MQTT broker
         exit();
@@ -197,7 +203,6 @@ void keyPressed() {
       } else if (key >= 'a' && key <= 'z') {
         MessageFromProcessing_PMD = key + "MessageFromProcessing_PMD:LowerCase" + theTimeStamp;
       } else if (key >= '0' && key <= '9') {     //Alarms by number pressed.
-        keyIndex = key - '0';                                                           //Offset the numerical ASCII down to an int.
         MessageFromProcessing_PMD = "MessageFromProcessing_PMD:" + " " + (int(key)-48);
         //Form the GPAD API compatible message for KRAKE Topic.  
         MessageFromProcessing_PMD = "a" + (int(key)-48) + "MessageFromProcessing_PMD:" + (int(key)-48)+ " " + theTimeStamp;
