@@ -2,9 +2,14 @@
 String PROG_NAME = "PMD_Processing_MQTT";
 String VERSION = "V0.40 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
-String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
+//String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
+//String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
+String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
+
 //String BROKER_URL = "mqtt://broker.hivemq.com";
 //String BROKER_URL = "https://test.mosquitto.org/";
+
+
 
 // File: PMD_Processing_MQTT 
 // Author: Forrest Lee Erickson
@@ -73,47 +78,50 @@ void setupDictionary() {
   mac_to_NameDict.set("3C61053EE100", "PPG_Lee");
 
 
-  mac_to_NameDict.set("F024F9F1B874", "KRAKE_LB0001");
-  mac_to_NameDict.set("142B2FEB1F00", "KRAKE_LB0002");
-  mac_to_NameDict.set("142B2FEB1C64", "KRAKE_LB0003");
-  mac_to_NameDict.set("142B2FEB1E24", "KRAKE_LB0004");
-  mac_to_NameDict.set("F024F9F1B880", "KRAKE_LB0005");
-  mac_to_NameDict.set("F4650BC295C0", "KRAKE_LB0006");
-  mac_to_NameDict.set("F4650BC2959C", "KRAKE_LB0007");
-  mac_to_NameDict.set("F4650BC295AC", "KRAKE_LB0008");
-  mac_to_NameDict.set("F4650BC295D0", "KRAKE_LB0009");
+//  mac_to_NameDict.set("F024F9F1B874", "KRAKE_LB0001");
+//  mac_to_NameDict.set("142B2FEB1F00", "KRAKE_LB0002");
+//  mac_to_NameDict.set("142B2FEB1C64", "KRAKE_LB0003");
+//  mac_to_NameDict.set("142B2FEB1E24", "KRAKE_LB0004");
+//  mac_to_NameDict.set("F024F9F1B880", "KRAKE_LB0005");
+//  mac_to_NameDict.set("F4650BC295C0", "KRAKE_LB0006");
+//  mac_to_NameDict.set("F4650BC2959C", "KRAKE_LB0007");
+  
+  mac_to_NameDict.set("F4650BC295AC", "KRAKE_LB0008");  //Nagham using
+// mac_to_NameDict.set("F4650BC295D0", "KRAKE_LB0009");
   
   
   //mac_to_NameDict.set("F4650BC0B5??", "KRAKE_US0015");
-  mac_to_NameDict.set("F4650BC0B528", "KRAKE_US0014");
-  mac_to_NameDict.set("F4650BC295E8", "KRAKE_US0013");
-  mac_to_NameDict.set("F4650BBB3EE4", "KRAKE_US0012");
-  mac_to_NameDict.set("F4650BC0B530", "KRAKE_US0011");
-  mac_to_NameDict.set("F4650BBB3ED0", "KRAKE_US0010");
-  mac_to_NameDict.set("F4650BBB3ED8", "KRAKE_US0009");
-  mac_to_NameDict.set("F4650BBB3EDC", "KRAKE_US0008");
+  mac_to_NameDict.set("F4650BC0B528", "KRAKE_US0014");  //Lee using
+
+  //mac_to_NameDict.set("F4650BC295E8", "KRAKE_US0013");
+  //mac_to_NameDict.set("F4650BBB3EE4", "KRAKE_US0012");
+  //mac_to_NameDict.set("F4650BC0B530", "KRAKE_US0011");
+  //mac_to_NameDict.set("F4650BBB3ED0", "KRAKE_US0010");
+  //mac_to_NameDict.set("F4650BBB3ED8", "KRAKE_US0009");
+  //mac_to_NameDict.set("F4650BBB3EDC", "KRAKE_US0008");
+
   mac_to_NameDict.set("F4650BC0B524", "KRAKE_US0007");
-  mac_to_NameDict.set("F4650BC0B52C", "KRAKE_US0006");
-  mac_to_NameDict.set("ECC9FF7D8EE8", "KRAKE_US0005");
-  mac_to_NameDict.set("ECC9FF7D8EF4", "KRAKE_US0004");
-  mac_to_NameDict.set("ECC9FF7C8C98", "KRAKE_US0003");
-  mac_to_NameDict.set("ECC9FF7D8F00", "KRAKE_US0002");
-  mac_to_NameDict.set("ECC9FF7C8BDC", "KRAKE_US0001");
-  mac_to_NameDict.set("3C61053DF08C", "20240421_USA1");
-  mac_to_NameDict.set("3C6105324EAC", "20240421_USA2");
-  mac_to_NameDict.set("3C61053DF63C", "20240421_USA3");
-  mac_to_NameDict.set("10061C686A14", "20240421_USA4");
-  mac_to_NameDict.set("FCB467F4F74C", "20240421_USA5");
-  mac_to_NameDict.set("CCDBA730098C", "20240421_LEB1");
-  mac_to_NameDict.set("CCDBA730BFD4", "20240421_LEB2");
-  mac_to_NameDict.set("CCDBA7300954", "20240421_LEB3");
-  mac_to_NameDict.set("A0DD6C0EFD28", "20240421_LEB4");
-  mac_to_NameDict.set("10061C684D28", "20240421_LEB5");
-  mac_to_NameDict.set("A0B765F51E28", "MockingKrake_LEB");
-  mac_to_NameDict.set("3C61053DC954", "Not Homework2, Maryville TN");
-  mac_to_NameDict.set("3C61053EE100", "MinKrakeLeeE100, Maryville TN");
+
+  //mac_to_NameDict.set("F4650BC0B52C", "KRAKE_US0006");
+  //mac_to_NameDict.set("ECC9FF7D8EE8", "KRAKE_US0005");
+  //mac_to_NameDict.set("ECC9FF7D8EF4", "KRAKE_US0004");
+  //mac_to_NameDict.set("ECC9FF7C8C98", "KRAKE_US0003");
+  //mac_to_NameDict.set("ECC9FF7D8F00", "KRAKE_US0002");
+  //mac_to_NameDict.set("ECC9FF7C8BDC", "KRAKE_US0001");
   
-  
+  //mac_to_NameDict.set("3C61053DF08C", "20240421_USA1");  //Homework II assemblies
+  //mac_to_NameDict.set("3C6105324EAC", "20240421_USA2");
+  //mac_to_NameDict.set("3C61053DF63C", "20240421_USA3");
+  //mac_to_NameDict.set("10061C686A14", "20240421_USA4");
+  //mac_to_NameDict.set("FCB467F4F74C", "20240421_USA5");
+  //mac_to_NameDict.set("CCDBA730098C", "20240421_LEB1");
+  //mac_to_NameDict.set("CCDBA730BFD4", "20240421_LEB2");
+  //mac_to_NameDict.set("CCDBA7300954", "20240421_LEB3");
+  //mac_to_NameDict.set("A0DD6C0EFD28", "20240421_LEB4");
+  //mac_to_NameDict.set("10061C684D28", "20240421_LEB5");
+  //mac_to_NameDict.set("A0B765F51E28", "MockingKrake_LEB");
+  //mac_to_NameDict.set("3C61053DC954", "Not Homework2, Maryville TN");
+   
 }//end setup mac_to_NameDict
 
 // Makes an array out of the dictionary keys. 
@@ -226,7 +234,10 @@ void setup() {
  
   //client.connect(BROKER_URL, USERNAME);    //  BROKER_URL and name
 //  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC, true);    //  BROKER_URL, name, Clean session
-  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC + "_" + second(), false);    //  BROKER_URL, name, do not Clean session
+
+//  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC + "_" + second(), false);    //  BROKER_URL, name, do not Clean session
+
+  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC + "_" + second(), true);    //  BROKER_URL, name, Clean session
 //  client.connect(BROKER_URL, PROG_NAME + "_" + theMAC, true);    //  BROKER_URL, name, Clean session
   MessageFromProcessing_PMD = "Nothing published Yet"; //An intial message for the draw()
 }//end setup()
@@ -251,7 +262,7 @@ void draw() {
   text(MessageFromProcessing_PMD, 200, TEXT_START);
   textSize(20);
   fill(200); //White for instructions.
-  text("Alarms, press digits 0-9, s(Silence), u(unMute), h, i, j, m ", 10, TEXT_START + 1*TEXT_SPACING);
+  text("Alarms, press digits 0-9, s(Silence), u(unMute), h, i, j, m Z sets retain z clears retain ", 10, TEXT_START + 1*TEXT_SPACING);
   text("Lee ab, Nagham cd, Robert ef, Yehya pq , Yuktee vw", 10, TEXT_START + 2*TEXT_SPACING);
 
   fill(252, 10, 55);
