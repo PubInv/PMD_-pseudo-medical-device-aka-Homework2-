@@ -1,6 +1,5 @@
-
 String PROG_NAME = "PMD_Processing_MQTT";
-String VERSION = "V0.40 ";
+String VERSION = "V0.42 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 //String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
@@ -49,7 +48,8 @@ String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
 // Date: 20260428 Rev 0.38.  Extend the messages for the GPAP Protocol V0.1.1  
 // Date: 20260501 Rev 0.39.  Log all traffice from subscriptions.  
 // Date: 20260502 Rev 0.40.  Change for 'Z' and 'z' clears the retained topic.  
-// Date: 20260504 Rev 0.41.  Change so that 'Z' and 'z' set retain for all messages.  
+// Date: 20260504 Rev 0.41.  Change so that 'Z' and 'z' set and clear retain for all messages.  
+// Date: 20260509 Rev 0.42.  Hard code retain "false" at this time. Restore all MAC addresses for Lebanon and TN/TX.  
 
 
 
@@ -75,39 +75,43 @@ void setupDictionary() {
 
 //  mac_to_NameDict.set("adam/out/LEBANON-5", "ADAM_Server");
 
-  mac_to_NameDict.set("3C61053EE100", "PPG_Lee");
-
-
-//  mac_to_NameDict.set("F024F9F1B874", "KRAKE_LB0001");
-//  mac_to_NameDict.set("142B2FEB1F00", "KRAKE_LB0002");
-//  mac_to_NameDict.set("142B2FEB1C64", "KRAKE_LB0003");
-//  mac_to_NameDict.set("142B2FEB1E24", "KRAKE_LB0004");
-//  mac_to_NameDict.set("F024F9F1B880", "KRAKE_LB0005");
-//  mac_to_NameDict.set("F4650BC295C0", "KRAKE_LB0006");
-//  mac_to_NameDict.set("F4650BC2959C", "KRAKE_LB0007");
+//Lebanon
+  mac_to_NameDict.set("F024F9F1B874", "KRAKE_LB0001");
+  mac_to_NameDict.set("142B2FEB1F00", "KRAKE_LB0002");
+  mac_to_NameDict.set("142B2FEB1C64", "KRAKE_LB0003");
+  mac_to_NameDict.set("142B2FEB1E24", "KRAKE_LB0004");
+  mac_to_NameDict.set("F024F9F1B880", "KRAKE_LB0005");
+  mac_to_NameDict.set("F4650BC295C0", "KRAKE_LB0006");
+  mac_to_NameDict.set("F4650BC2959C", "KRAKE_LB0007");
   
   mac_to_NameDict.set("F4650BC295AC", "KRAKE_LB0008");  //Nagham using
-// mac_to_NameDict.set("F4650BC295D0", "KRAKE_LB0009");
+  mac_to_NameDict.set("F4650BC295D0", "KRAKE_LB0009");
   
-  
+// Tennessee and Texas
+
+  mac_to_NameDict.set("3C61053EE100", "PPG_Lee");
+
   //mac_to_NameDict.set("F4650BC0B5??", "KRAKE_US0015");
   mac_to_NameDict.set("F4650BC0B528", "KRAKE_US0014");  //Lee using
 
-  //mac_to_NameDict.set("F4650BC295E8", "KRAKE_US0013");
-  //mac_to_NameDict.set("F4650BBB3EE4", "KRAKE_US0012");
-  //mac_to_NameDict.set("F4650BC0B530", "KRAKE_US0011");
-  //mac_to_NameDict.set("F4650BBB3ED0", "KRAKE_US0010");
-  //mac_to_NameDict.set("F4650BBB3ED8", "KRAKE_US0009");
-  //mac_to_NameDict.set("F4650BBB3EDC", "KRAKE_US0008");
+  mac_to_NameDict.set("F4650BC295E8", "KRAKE_US0013");
+  mac_to_NameDict.set("F4650BBB3EE4", "KRAKE_US0012");
+  mac_to_NameDict.set("F4650BC0B530", "KRAKE_US0011");
+  mac_to_NameDict.set("F4650BBB3ED0", "KRAKE_US0010");
+  mac_to_NameDict.set("F4650BBB3ED8", "KRAKE_US0009");
+  mac_to_NameDict.set("F4650BBB3EDC", "KRAKE_US0008");
 
   mac_to_NameDict.set("F4650BC0B524", "KRAKE_US0007");
 
-  //mac_to_NameDict.set("F4650BC0B52C", "KRAKE_US0006");
-  //mac_to_NameDict.set("ECC9FF7D8EE8", "KRAKE_US0005");
-  //mac_to_NameDict.set("ECC9FF7D8EF4", "KRAKE_US0004");
-  //mac_to_NameDict.set("ECC9FF7C8C98", "KRAKE_US0003");
-  //mac_to_NameDict.set("ECC9FF7D8F00", "KRAKE_US0002");
-  //mac_to_NameDict.set("ECC9FF7C8BDC", "KRAKE_US0001");
+  mac_to_NameDict.set("F4650BC0B52C", "KRAKE_US0006");
+  mac_to_NameDict.set("ECC9FF7D8EE8", "KRAKE_US0005");
+  mac_to_NameDict.set("ECC9FF7D8EF4", "KRAKE_US0004");
+  mac_to_NameDict.set("ECC9FF7C8C98", "KRAKE_US0003");
+  mac_to_NameDict.set("ECC9FF7D8F00", "KRAKE_US0002");
+  mac_to_NameDict.set("ECC9FF7C8BDC", "KRAKE_US0001");
+  
+
+// Homework II 
   
   //mac_to_NameDict.set("3C61053DF08C", "20240421_USA1");  //Homework II assemblies
   //mac_to_NameDict.set("3C6105324EAC", "20240421_USA2");
@@ -262,7 +266,8 @@ void draw() {
   text(MessageFromProcessing_PMD, 200, TEXT_START);
   textSize(20);
   fill(200); //White for instructions.
-  text("Alarms, press digits 0-9, s(Silence), u(unMute), h, i, j, m Z sets retain z clears retain ", 10, TEXT_START + 1*TEXT_SPACING);
+  //text("Alarms, press digits 0-9, s(Silence), u(unMute), h, i, j, m Z sets retain z clears retain ", 10, TEXT_START + 1*TEXT_SPACING);
+  text("Alarms, press digits 0-9, s(Silence), u(unMute), h, i, j, m ", 10, TEXT_START + 1*TEXT_SPACING);
   text("Lee ab, Nagham cd, Robert ef, Yehya pq , Yuktee vw", 10, TEXT_START + 2*TEXT_SPACING);
 
   fill(252, 10, 55);

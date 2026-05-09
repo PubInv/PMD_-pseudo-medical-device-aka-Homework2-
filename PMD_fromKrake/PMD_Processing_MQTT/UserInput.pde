@@ -193,7 +193,8 @@ void keyPressed() {
         //        void client.publish(String topic, byte[] payload, int qos, boolean retained);
         // works        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, 0, true); //Set QOS to 0 and retained true.
 
-        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, myQOS, myRetain); //Set QOS to 0 and retained true.
+//        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, myQOS, myRetain); //Set QOS to 0 and retained true.
+        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, myQOS, false); //Set QOS to 0 and retained false.
         myRetain = false; //Reset after publishing.
 
         disconnectMQTTBroker = true;  // Not working
