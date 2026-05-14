@@ -6,12 +6,13 @@ Device connects to a WiFi network with WiFi Manager
 Device accept OTA update with Eligant OTA.
 
 ## Future features
-Inrementaly add the following features.
+Incrementaly add the following features.
 
 1. Increment the verion
-2. Will serve a web page which identifes the device as file name, PMD_BPM_wMQTT, and version number. The home web page will have a link to the update page.
+2. Serve a web page which identifes the device as FILE_NAME (PMD_BPM_wMQTT) and version number. The home web page will have a link to the update page.
 3. The OLED display will report the status of the WiFi inilization. It will show the WiFi type such as softAP or STA. It will report the device MAC address. 
 It will report the IP address of the SoftAP or the STA.
+4. Correct the serial monotor messages that appear to be incorrectly saying WiFi crednetials not saved. 
 
 
 ## Boot message as of V.0.1.94 
