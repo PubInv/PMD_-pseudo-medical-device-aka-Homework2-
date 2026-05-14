@@ -1,9 +1,7 @@
 ## Summary
-An ESP32 project.
-Based on an ESP32 Dev Kit1
-As of about Jun 15 2025
-Device connects to a WiFi network with WiFi Manager
-Device accept OTA update with Eligant OTA.
+An ESP32 project.  
+Based on an ESP32 Dev Kit1  
+As of about Jun 15 2025, Device connects to a WiFi network with WiFi Manager and device accept OTA update with Eligant OTA.  
 
 ## Future features
 Incrementaly add the following features.
