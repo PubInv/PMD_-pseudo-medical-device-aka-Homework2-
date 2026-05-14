@@ -4,13 +4,13 @@ Based on an ESP32 Dev Kit1
 As of about Jun 15 2025, Device connects to a WiFi network with WiFi Manager and device accept OTA update with Eligant OTA.  
 
 ## Future features
-Incrementaly add the following features.
+Incrementally add the following features.
 
-1. Increment the verion
-2. Serve a web page which identifes the device as FILE_NAME (PMD_BPM_wMQTT) and version number. The home web page will have a link to the update page.
-3. The OLED display will report the status of the WiFi inilization. It will show the WiFi type such as softAP or STA. It will report the device MAC address. 
-It will report the IP address of the SoftAP or the STA.
-4. Correct the serial monotor messages that appear to be incorrectly saying WiFi crednetials not saved. 
+1. Increment the version
+2. Serve a web page which identifies the device as FILE_NAME (PMD_BPM_MQTT) and version number. The home web page will have a link to the update page.
+3. The OLED display will report the status of the Wi-Fi initialization. It will show the Wi-Fi type such as soft AP or STA. It will report the device MAC address. 
+It will report the IP address of the Soft AP or the STA.
+4. Correct the serial monitor messages that appear to be incorrectly saying Wi-Fi credentials not saved. 
 
 
 ## Boot message as of V.0.1.94  
