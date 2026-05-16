@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ESP IoT Dashboard</title>
+    <title>%FILE_NAME% %VERSION%</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -10,10 +10,18 @@
 </head>
 <body>
     <div class="topnav">
-        <h1>KRAKE KRAKE ALL THE WAY</h1>
+        <h1>%FILE_NAME%</h1>
+        <p class="version">Version: %VERSION%</p>
     </div>
 
     <div class="content">
+        <section class="device-card">
+            <h2>Device Information</h2>
+            <p><strong>Device:</strong> %FILE_NAME%</p>
+            <p><strong>Version:</strong> %VERSION%</p>
+            <p><a class="update-link" href="/update">Open OTA update page</a></p>
+        </section>
+
         <div class="card-grid" id="led-container"></div>
     </div>
 

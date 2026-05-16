@@ -73,6 +73,14 @@ void initWiFi() {
 }
 
 String processor(const String& var) {
+    if (var == "FILE_NAME") {
+        return String(FILE_NAME);
+    }
+
+    if (var == "VERSION") {
+        return String(VERSION);
+    }
+
     if (var == "STATE") {
         if (digitalRead(WiFiLed)) {
             ledState = "ON";
