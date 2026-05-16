@@ -107,6 +107,9 @@ void keyPressed() {
       } else if (key == 'Q' ) {
         myRetain = globalRetain;
         MessageFromProcessing_PMD = "a2{ABCD}[123]GPAP 0.1.1 protocol message, Yehya is in Discord, " + theTimeStamp ;
+      } else if (key == 'R' ) {
+        myRetain = false;
+        MessageFromProcessing_PMD = "r" ;
       } else if (key == 'V') {
         myRetain = globalRetain;
         MessageFromProcessing_PMD = "a1{ABCD}[123]GPAP 0.1.1 protocol message, Yuktee has left Discord, " + theTimeStamp ;
@@ -196,6 +199,8 @@ void keyPressed() {
 //        client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, myQOS, myRetain); //Set QOS to 0 and retained true.
         client.publish(KRAKE_MAC[i]+"_ALM", MessageFromProcessing_PMD, myQOS, false); //Set QOS to 0 and retained false.
         myRetain = false; //Reset after publishing.
+        println(MessageFromProcessing_PMD);
+        
 
         disconnectMQTTBroker = true;  // Not working
         println("Exit PMT");

@@ -1,5 +1,5 @@
 String PROG_NAME = "PMD_Processing_MQTT";
-String VERSION = "V0.42 ";
+String VERSION = "V0.43 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 //String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
@@ -50,6 +50,7 @@ String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
 // Date: 20260502 Rev 0.40.  Change for 'Z' and 'z' clears the retained topic.  
 // Date: 20260504 Rev 0.41.  Change so that 'Z' and 'z' set and clear retain for all messages.  
 // Date: 20260509 Rev 0.42.  Hard code retain "false" at this time. Restore all MAC addresses for Lebanon and TN/TX.  
+// Date: 20260509 Rev 0.43.  'R' publishes 'r' to reset Krakes remotly.  
 
 
 
