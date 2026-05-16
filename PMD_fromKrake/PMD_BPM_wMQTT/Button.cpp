@@ -109,6 +109,11 @@ void muteFiveMin(byte btnStatus) {
 
 void SendEmergMessage(byte btnStatus) {
   handleButtonEvent("SW4", btnStatus);
+  if (btnStatus == onPress) {
+    requestWiFiSplash();
+    return;
+  }
+
   messageToPublish = "a5Send Emergency";
   syntheticBPM = 125;  //A high BPM
 }

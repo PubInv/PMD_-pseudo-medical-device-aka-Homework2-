@@ -27,6 +27,7 @@ extern DailyStruggleButton BOOT;
 
 // FLE extern ElegantOTA ;
 extern bool clearOTA;
+void requestWiFiSplash();
 
 void splashserial();
 void buttonEvent(byte btnStatus);
