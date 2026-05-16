@@ -5,6 +5,12 @@ html {
 h1 {
   font-size: 1.8rem;
   color: white;
+  margin-bottom: 0.25rem;
+}
+.version {
+  color: #FEFCFB;
+  font-weight: bold;
+  margin-top: 0;
 }
 .topnav {
   overflow: hidden;
@@ -15,6 +21,29 @@ body {
 }
 .content { 
   padding: 50px;
+}
+.device-card {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  background-color: #FEFCFB;
+  box-shadow: 2px 2px 12px 1px rgba(140,140,140,.5);
+}
+.device-card h2 {
+  color: #034078;
+  margin-top: 0;
+}
+.update-link {
+  display: inline-block;
+  background-color: #034078;
+  border-radius: 4px;
+  color: #FEFCFB;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+.update-link:hover {
+  background-color: #1282A2;
 }
 .card-grid {
   max-width: 800px;

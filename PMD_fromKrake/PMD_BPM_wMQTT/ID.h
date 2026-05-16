@@ -1,6 +1,7 @@
 
 #include <Arduino.h>
 
+#define FILE_NAME "PMD_BPM_MQTT"
 #define PROG_NAME "PMD_BPM_wMQTT "
 #define VERSION " V.0.1.10 " /// Increment version
 //#define MODEL_NAME "Model: BUTTOM"
