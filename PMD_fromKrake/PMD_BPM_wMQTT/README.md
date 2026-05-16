@@ -9,7 +9,7 @@ Incrementally add the following features.
 1. Increment the version
 2. Serve a web page which identifies the device as FILE_NAME (PMD_BPM_MQTT) and version number. The home web page will have a link to the update page.
 3. The OLED display will report the status of the Wi-Fi initialization. It will show the Wi-Fi type such as soft AP or STA. It will report the device MAC address. 
-It will report the IP address of the Soft AP or the STA.
+It will report the IP address of the Soft AP or the STA.  This splash screen will stay visible for five seconds. After which the progream resumes as per its current behavior. There is a active low button on GPIO35. Pressing it for a time greater than a debounce time and less than 1 second will cause the splash screen to again display, again for 5 seconds. 
 4. Correct the serial monitor messages that appear to be incorrectly saying Wi-Fi credentials not saved. 
 
 
