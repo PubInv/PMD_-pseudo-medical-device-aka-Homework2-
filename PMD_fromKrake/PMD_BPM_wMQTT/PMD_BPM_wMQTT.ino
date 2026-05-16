@@ -32,6 +32,9 @@ AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
 
 bool clearOTA = false;
+bool showWiFiSplash = false;
+unsigned long wifiSplashUntil = 0;
+
 
 
 #define SCREEN_WIDTH 128
@@ -143,6 +146,76 @@ void splashOLED_P1() {
 }
 
 
+String wifiModeName() {
+  wifi_mode_t mode = WiFi.getMode();
+
+  if (mode == WIFI_AP) {
+    return "Soft AP";
+  }
+  if (mode == WIFI_AP_STA) {
+    return "AP+STA";
+  }
+  if (mode == WIFI_STA) {
+    return "STA";
+  }
+  return "OFF";
+}
+
+String wifiAddress() {
+  wifi_mode_t mode = WiFi.getMode();
+
+  if (mode == WIFI_AP || mode == WIFI_AP_STA) {
+    return WiFi.softAPIP().toString();
+  }
+  return WiFi.localIP().toString();
+}
+
+String wifiMacAddress() {
+  wifi_mode_t mode = WiFi.getMode();
+
+  if (mode == WIFI_AP || mode == WIFI_AP_STA) {
+    return WiFi.softAPmacAddress();
+  }
+  return WiFi.macAddress();
+}
+
+void displayWiFiStatusSplash(const char* status) {
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  int row = 0;
+  const int rowHeight = 10;
+
+  display.setCursor(0, row);
+  display.println("WiFi init");
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println(status);
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println("Type: " + wifiModeName());
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println("MAC:");
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println(wifiMacAddress());
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println("IP: " + wifiAddress());
+  display.display();
+}
+
+void showWiFiStatusSplash(unsigned long durationMs) {
+  displayWiFiStatusSplash(WiFi.status() == WL_CONNECTED ? "Connected" : "Config Portal");
+  showWiFiSplash = true;
+  wifiSplashUntil = millis() + durationMs;
+}
+
+void requestWiFiSplash() {
+  showWiFiStatusSplash(5000);
+}
+
 void splashOLED() {
   display.clearDisplay();
   display.setTextSize(1);
@@ -215,9 +288,13 @@ void setup() {
   // display.setCursor(0, rowPosition);
   // display.display();
 
-  WiFiMan();
-  initWiFi();
+  displayWiFiStatusSplash("Starting");
   initLittleFS();
+  displayWiFiStatusSplash("WiFiManager");
+  WiFiMan();
+  displayWiFiStatusSplash("Connecting");
+  initWiFi();
+  showWiFiStatusSplash(5000);
   setupOTA();
   server.begin();             // Start web page server
   ElegantOTA.begin(&server);  // Start ElegantOTA
@@ -249,7 +326,6 @@ void setup() {
 
   setupButton();  //Buttons, switches
   pulse.begin();
-  splashOLED();
 
   // More setup code here
   digitalWrite(LED_1, LOW);        //Make built in LED low at end of setup.
@@ -325,7 +401,15 @@ void loop() {
 
   }  // end MQTT publishing
 
-  updateOLED();
+  if (showWiFiSplash) {
+    if (millis() >= wifiSplashUntil) {
+      showWiFiSplash = false;
+    }
+  }
+
+  if (!showWiFiSplash) {
+    updateOLED();
+  }
 
   //Check of clearOTA.
   if (true == clearOTA) {

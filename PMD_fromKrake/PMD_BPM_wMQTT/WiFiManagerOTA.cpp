@@ -6,6 +6,7 @@ const char* default_ssid = DEVICE_UNDER_TEST;  // Default AP Name
 String ssid = "";
 String password = "";
 String ledState = "";
+extern void displayWiFiStatusSplash(const char* status);
 // const int WiFiLed = 2;  // Modify based on actual LED pin
 
 void saveCredentials(const char* ssid, const char* password) {
@@ -39,6 +40,9 @@ bool loadCredentials() {
 
 void WiFiMan() {
     WiFiManager wifiManager;
+    wifiManager.setAPCallback([](WiFiManager*) {
+        displayWiFiStatusSplash("Config Portal");
+    });
 
     if (!loadCredentials()) {
         if (!wifiManager.autoConnect(default_ssid)) {
