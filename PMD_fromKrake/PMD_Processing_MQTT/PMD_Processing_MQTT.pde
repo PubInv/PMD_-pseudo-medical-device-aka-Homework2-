@@ -1,5 +1,5 @@
 String PROG_NAME = "PMD_Processing_MQTT";
-String VERSION = "V0.43 ";
+String VERSION = "V0.44 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 //String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
@@ -51,6 +51,7 @@ String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
 // Date: 20260504 Rev 0.41.  Change so that 'Z' and 'z' set and clear retain for all messages.  
 // Date: 20260509 Rev 0.42.  Hard code retain "false" at this time. Restore all MAC addresses for Lebanon and TN/TX.  
 // Date: 20260509 Rev 0.43.  'R' publishes 'r' to reset Krakes remotly.  
+// Date: 20260516 Rev 0.44.  Add to mac_to_NameDict the UK Krakes. Increase size of Broker on widow.  
 
 
 
@@ -111,6 +112,19 @@ void setupDictionary() {
   mac_to_NameDict.set("ECC9FF7D8F00", "KRAKE_US0002");
   mac_to_NameDict.set("ECC9FF7C8BDC", "KRAKE_US0001");
   
+// UK Krakes
+/*
+UK0001  F4650BC295EC  UK
+UK0002  F4650BC295DC  UK
+UK0003  F4650BC295D8  UK
+UK0004  F4650BC295BC  UK
+*/
+
+  mac_to_NameDict.set("F4650BC295EC", "KRAKE_UK0001");
+  mac_to_NameDict.set("F4650BC295DC", "KRAKE_UK0002");
+  mac_to_NameDict.set("F4650BC295D8", "KRAKE_UK0003");
+  mac_to_NameDict.set("F4650BC295BC", "KRAKE_UK0004");
+  //mac_to_NameDict.set("????", "KRAKE_UK0005");
 
 // Homework II 
   
@@ -283,9 +297,10 @@ void draw() {
   }
 
   //Footer
-  textSize(10);
+  textSize(20);
   fill(200);
-  text("Broker Name: " + BROKER_URL, 10, height-30);
+  text("Broker Name: " + BROKER_URL, 10, height-40);
+  textSize(10);
   text("myLogFileName: " + myLogFileName, 10, height - 20); 
   text("PROJECT_URL: " + PROJECT_URL, 10, height - 10);
   //end of Footer
