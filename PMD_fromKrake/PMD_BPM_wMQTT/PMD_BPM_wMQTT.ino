@@ -212,6 +212,35 @@ void showWiFiStatusSplash(unsigned long durationMs) {
   wifiSplashUntil = millis() + durationMs;
 }
 
+void displayWiFiCredentialsSplash(const String& networkSsid, const String& networkPassword) {
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+
+  int row = 0;
+  const int rowHeight = 10;
+
+  display.setCursor(0, row);
+  display.println("WiFi credentials");
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println("SSID:");
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println(networkSsid.substring(0, 21));
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println("Password:");
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println(networkPassword.substring(0, 21));
+  row += rowHeight;
+  display.setCursor(0, row);
+  display.println("Serial has full text");
+  display.display();
+  delay(5000);
+}
+
 void requestWiFiSplash() {
   showWiFiStatusSplash(5000);
 }
