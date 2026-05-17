@@ -1,9 +1,12 @@
 String PROG_NAME = "PMD_Processing_MQTT";
-String VERSION = "V0.44 ";
+String VERSION = "V0.45 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 //String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
-String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
+//String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
+String BROKER_URL = "mqtt://krakepubinv:DlDmkWjp4I4kgDcA@krakepubinv.cloud.shiftr.io";
+
+
 
 //String BROKER_URL = "mqtt://broker.hivemq.com";
 //String BROKER_URL = "https://test.mosquitto.org/";
@@ -52,7 +55,7 @@ String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
 // Date: 20260509 Rev 0.42.  Hard code retain "false" at this time. Restore all MAC addresses for Lebanon and TN/TX.  
 // Date: 20260509 Rev 0.43.  'R' publishes 'r' to reset Krakes remotly.  
 // Date: 20260516 Rev 0.44.  Add to mac_to_NameDict the UK Krakes. Increase size of Broker on widow.  
-
+// Date: 20260516 Rev 0.45.  new broker: "mqtt://krakepubinv:DlDmkWjp4I4kgDcA@krakepubinv.cloud.shiftr.io";
 
 
 // Description:
@@ -78,15 +81,15 @@ void setupDictionary() {
 //  mac_to_NameDict.set("adam/out/LEBANON-5", "ADAM_Server");
 
 //Lebanon
-  mac_to_NameDict.set("F024F9F1B874", "KRAKE_LB0001");
-  mac_to_NameDict.set("142B2FEB1F00", "KRAKE_LB0002");
-  mac_to_NameDict.set("142B2FEB1C64", "KRAKE_LB0003");
-  mac_to_NameDict.set("142B2FEB1E24", "KRAKE_LB0004");
-  mac_to_NameDict.set("F024F9F1B880", "KRAKE_LB0005");
-  mac_to_NameDict.set("F4650BC295C0", "KRAKE_LB0006");
-  mac_to_NameDict.set("F4650BC2959C", "KRAKE_LB0007");
+  //mac_to_NameDict.set("F024F9F1B874", "KRAKE_LB0001");
+  //mac_to_NameDict.set("142B2FEB1F00", "KRAKE_LB0002");
+  //mac_to_NameDict.set("142B2FEB1C64", "KRAKE_LB0003");
+  //mac_to_NameDict.set("142B2FEB1E24", "KRAKE_LB0004");
+  //mac_to_NameDict.set("F024F9F1B880", "KRAKE_LB0005");
+  //mac_to_NameDict.set("F4650BC295C0", "KRAKE_LB0006");
+  //mac_to_NameDict.set("F4650BC2959C", "KRAKE_LB0007");
   
-  mac_to_NameDict.set("F4650BC295AC", "KRAKE_LB0008");  //Nagham using
+  //mac_to_NameDict.set("F4650BC295AC", "KRAKE_LB0008");  //Nagham using
   mac_to_NameDict.set("F4650BC295D0", "KRAKE_LB0009");
   
 // Tennessee and Texas
@@ -96,21 +99,21 @@ void setupDictionary() {
   //mac_to_NameDict.set("F4650BC0B5??", "KRAKE_US0015");
   mac_to_NameDict.set("F4650BC0B528", "KRAKE_US0014");  //Lee using
 
-  mac_to_NameDict.set("F4650BC295E8", "KRAKE_US0013");
-  mac_to_NameDict.set("F4650BBB3EE4", "KRAKE_US0012");
-  mac_to_NameDict.set("F4650BC0B530", "KRAKE_US0011");
-  mac_to_NameDict.set("F4650BBB3ED0", "KRAKE_US0010");
-  mac_to_NameDict.set("F4650BBB3ED8", "KRAKE_US0009");
-  mac_to_NameDict.set("F4650BBB3EDC", "KRAKE_US0008");
+  //mac_to_NameDict.set("F4650BC295E8", "KRAKE_US0013");
+  //mac_to_NameDict.set("F4650BBB3EE4", "KRAKE_US0012");
+  //mac_to_NameDict.set("F4650BC0B530", "KRAKE_US0011");
+  //mac_to_NameDict.set("F4650BBB3ED0", "KRAKE_US0010");
+  //mac_to_NameDict.set("F4650BBB3ED8", "KRAKE_US0009");
+  //mac_to_NameDict.set("F4650BBB3EDC", "KRAKE_US0008");
 
-  mac_to_NameDict.set("F4650BC0B524", "KRAKE_US0007");
+  //mac_to_NameDict.set("F4650BC0B524", "KRAKE_US0007");
 
-  mac_to_NameDict.set("F4650BC0B52C", "KRAKE_US0006");
-  mac_to_NameDict.set("ECC9FF7D8EE8", "KRAKE_US0005");
-  mac_to_NameDict.set("ECC9FF7D8EF4", "KRAKE_US0004");
-  mac_to_NameDict.set("ECC9FF7C8C98", "KRAKE_US0003");
-  mac_to_NameDict.set("ECC9FF7D8F00", "KRAKE_US0002");
-  mac_to_NameDict.set("ECC9FF7C8BDC", "KRAKE_US0001");
+  //mac_to_NameDict.set("F4650BC0B52C", "KRAKE_US0006");
+  //mac_to_NameDict.set("ECC9FF7D8EE8", "KRAKE_US0005");
+  //mac_to_NameDict.set("ECC9FF7D8EF4", "KRAKE_US0004");
+  //mac_to_NameDict.set("ECC9FF7C8C98", "KRAKE_US0003");
+  //mac_to_NameDict.set("ECC9FF7D8F00", "KRAKE_US0002");
+  //mac_to_NameDict.set("ECC9FF7C8BDC", "KRAKE_US0001");
   
 // UK Krakes
 /*
@@ -120,11 +123,11 @@ UK0003  F4650BC295D8  UK
 UK0004  F4650BC295BC  UK
 */
 
-  mac_to_NameDict.set("F4650BC295EC", "KRAKE_UK0001");
-  mac_to_NameDict.set("F4650BC295DC", "KRAKE_UK0002");
-  mac_to_NameDict.set("F4650BC295D8", "KRAKE_UK0003");
-  mac_to_NameDict.set("F4650BC295BC", "KRAKE_UK0004");
-  //mac_to_NameDict.set("????", "KRAKE_UK0005");
+  //mac_to_NameDict.set("F4650BC295EC", "KRAKE_UK0001");
+  //mac_to_NameDict.set("F4650BC295DC", "KRAKE_UK0002");
+  //mac_to_NameDict.set("F4650BC295D8", "KRAKE_UK0003");
+  //mac_to_NameDict.set("F4650BC295BC", "KRAKE_UK0004");
+  ////mac_to_NameDict.set("????", "KRAKE_UK0005");
 
 // Homework II 
   
