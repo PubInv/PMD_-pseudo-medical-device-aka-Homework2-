@@ -7,6 +7,7 @@ String ssid = "";
 String password = "";
 String ledState = "";
 extern void displayWiFiStatusSplash(const char* status);
+extern void displayWiFiCredentialsSplash(const String& networkSsid, const String& networkPassword);
 // const int WiFiLed = 2;  // Modify based on actual LED pin
 
 void saveCredentials(const char* ssid, const char* password) {
@@ -35,6 +36,10 @@ bool loadCredentials() {
     
     file.close();
     Serial.println("Loaded WiFi credentials from storage.");
+    Serial.println("WiFi credentials loaded from LittleFS:");
+    Serial.println("  SSID: " + ssid);
+    Serial.println("  Password: " + password);
+    displayWiFiCredentialsSplash(ssid, password);
     return true;
 }
 
