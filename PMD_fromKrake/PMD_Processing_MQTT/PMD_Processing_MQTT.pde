@@ -1,25 +1,18 @@
 String PROG_NAME = "PMD_Processing_MQTT";
-String VERSION = "V0.46 ";
+String VERSION = "V0.47 ";
 String PROJECT_URL = "https://github.com/PubInv/krake/tree/main/PMD/PMD_Processing_MQTT"; 
 
-//String BROKER_URL = "mqtt://merakdubhe:84AEaSrLguddu1qL@merakdubhe.cloud.shiftr.io";  //Full access Lee
-
-//String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io"; //Public with visualizer
-
-//String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
-//String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
-
 String BROKER_URL = "mqtt://krakepubinv:DlDmkWjp4I4kgDcA@krakepubinv.cloud.shiftr.io";
+//String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
+
+//String BROKER_URL = "mqtt://merakdubhe:84AEaSrLguddu1qL@merakdubhe.cloud.shiftr.io";  //Full access Lee
+//String BROKER_URL = "mqtt://public:public@public.cloud.shiftr.io"; //Public with visualizer
+//String BROKER_URL = "mqtt://public:public@krakepubinv.cloud.shiftr.io";
 //String BROKER_URL = "mqtt://merakdubhe:84AEaSrLguddu1qL@merakdubhe.cloud.shiftr.io";  //Full access Lee
 //String BROKER_URL = "mqtt://merakdubhe:dWbX1blromth1Hls@merakdubhe.cloud.shiftr.io";  //ReadOnly access
 //String BROKER_URL = "mqtt://public:public@merakdubhe.cloud.shiftr.io"; //Lee's 
-
 //String BROKER_URL = "mqtt://merakdubhe:imTqNIYeLJwMvqnh@merakdubhe.cloud.shiftr.io";  //Full access Nagham
-
-
 //String BROKER_URL = "mqtt://public:public@merakdubhe.cloud.shiftr.io"; //Lee's 
-
-
 //String BROKER_URL = "mqtt://broker.hivemq.com";
 //String BROKER_URL = "https://test.mosquitto.org/";
 
@@ -69,6 +62,7 @@ String BROKER_URL = "mqtt://krakepubinv:DlDmkWjp4I4kgDcA@krakepubinv.cloud.shift
 // Date: 20260516 Rev 0.44.  Add to mac_to_NameDict the UK Krakes. Increase size of Broker on widow.  
 // Date: 20260516 Rev 0.45.  new broker: "mqtt://krakepubinv:DlDmkWjp4I4kgDcA@krakepubinv.cloud.shiftr.io";
 // Date: 20260527 Rev 0.46.  Catch loss of focust on draw window and suppress publishing MQTT.
+// Date: 20260530 Rev 0.47.  Comment out printing of key press code.
 
 
 // Description:

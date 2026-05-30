@@ -79,11 +79,11 @@ void keyPressed() {
     int myQOS = 0 ;
     boolean myRetain = false;
 
-    //Check if leaving window and suppress.
-    print("key is: ");
-    println(key);
-    int asciiValue = int(key); 
-    println(asciiValue); //
+    ////Check if leaving window and suppress.
+    //print("key is: ");
+    //println(key);
+    //int asciiValue = int(key); 
+    //println(asciiValue); //
     
    
     if (key < 127) { //Catch change focues from draw() window which is a big number
